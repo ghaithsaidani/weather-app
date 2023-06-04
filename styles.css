@@ -1,0 +1,167 @@
+@font-face {
+    font-family: 'Plus Jakarta Sans SemiBold';
+    src: url('./assets/fonts/Plus_Jakarta_Sans/PlusJakartaSans-SemiBold.ttf');
+}
+
+@font-face {
+    font-family: 'Plus Jakarta Sans Bold';
+    src: url('./assets/fonts/Plus_Jakarta_Sans/PlusJakartaSans-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'DM Sans Medium';
+    src: url('./assets/fonts/DM_Sans/DMSans-Medium.ttf');
+}
+
+
+:root {
+    --main-bg-color: #4A7DFF;
+    --card-bg-color:#C9E5FF;
+    --degree-color:#91B3D2;
+    --text-color:#658CAF;
+    --font-family-jakarta-semi-bold:'Plus Jakarta Sans SemiBold';
+    --font-family-jakarta-bold:'Plus Jakarta Sans Bold';
+    --font-family-dmsans-medium:'DM Sans Medium';
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--main-bg-color);
+    display: grid;
+    place-items: center;
+    grid-template-rows: repeat(1,100vh);
+}
+
+.card {
+    padding: 2rem 5rem;
+    background: var(--card-bg-color);
+    border-radius: 30px;
+    box-shadow: 0px 51.8627px 154.063px rgba(9, 0, 63, 0.38);
+}
+
+.card .search {
+    height: 3rem;
+    width: 22rem;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    border: solid 1px transparent;
+    border-radius: 25px;
+    padding: 0 1rem 0 2rem;
+
+}
+
+.card .search:has(input:focus) {
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+.card .search input {
+    border: none;
+    outline: none;
+    height: 100%;
+    width: 17rem;
+    font-family: var(--font-family-jakarta-semi-bold);
+}
+
+.card .search input::placeholder {
+    font-size: .9em;
+    opacity: 40%;
+}
+
+.card .search button {
+    height: 2rem;
+    background: transparent;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.card .search button img {
+    height: 100%;
+}
+
+.card .weather{
+    display: none;
+}
+
+.card .weather .head{
+    display: flex;
+    justify-content: space-between;
+    width: 22rem;
+    margin-top: 5rem;
+}
+
+.card .weather .head .weather-icon {
+    width: 150px;
+    height: 100%;
+    margin-top: 1.5rem;
+}
+
+.card .weather .head .temprature{
+    flex: 0.5;
+    width: 100%;
+}
+
+.card .weather .head .temprature .celsius{
+    font-size: 6rem;
+    font-family: var(--font-family-jakarta-bold);
+    background: linear-gradient(180deg, #296399 54.68%, rgba(255, 255, 255, 0) 187.46%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+
+.card .weather .head .temprature .celsius span {
+    background: var(--degree-color);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.card .weather .head .temprature .city {
+    color: var(--text-color);
+    font-family: var(--font-family-jakarta-semi-bold);
+    font-size: 1.5rem;
+}
+
+.card .weather .details{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 2.5rem;
+}
+
+
+.card .weather .details .col{
+    width: 5rem;
+    height: 4rem;
+    display: grid;
+    place-items: center;
+}
+
+.card .weather .details .col img{
+    width: 40%;
+}
+
+.card .weather .details .col h5{
+    font-family: var(--font-family-dmsans-medium);
+    color: var(--text-color);
+    opacity: 60%;
+}
+
+
+.error .search{
+    border-color: red;
+    
+}
+
+.error .search input{
+    color: red;
+}
